@@ -1,0 +1,161 @@
+@import url("./fonts.css");
+
+:root {
+
+    /* Primary */
+    --Red-400: hsl(0, 100%, 74%); 
+    --Green-400: hsl(154, 59%, 51%);
+
+    /* Accent */
+    --Purple-700: hsl(248, 32%, 49%);
+
+    /* Neutral */
+    --Gray-900: hsl(249, 10%, 26%); 
+    --Purple-350: hsl(246, 25%, 77%);
+
+    font-family: "Poppins";
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background:var(--Red-400) url("../assets/images/bg-intro-mobile.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    gap: 2rem;
+}
+.container main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.container main h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.container main p {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.container .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.container .form-container .premium {
+    background-color: var(--Purple-700);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.8rem 3.1rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 0 hsla(249, 10%, 26%, 0.5);
+    border-radius: 0.3rem;
+}
+.container .form-container .premium span {
+    font-weight: 600;
+}
+
+.container .form-container #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: white;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.5rem 0 hsla(249, 10%, 26%, 0.5);
+}
+.container .form-container #form .field {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--Purple-350);
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container .form-container #form .field input {
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    font-size: 0.8rem;
+}
+.container .form-container #form .field input::placeholder {
+    text-transform: capitalize;
+}
+.container .form-container #form .field input::spelling-error {
+    text-decoration: none;
+}
+.container .form-container #form .field img {
+    display: none;
+    width: 15px;
+}
+.container .form-container #form .field input:invalid ~ img, 
+.container .form-container #form .field input:empty ~ img {
+    display: block;
+}
+.container .form-container #form #submit {
+    background-color: hsl(154, 59%, 45%);;
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 0.3rem 0 hsl(154, 59%, 40%);
+    border-radius: 0.3rem;
+    text-transform: uppercase;
+}
+.container .form-container #form #submit:hover {
+    background-color: var(--Green-400);
+}
+.container .form-container #form p {
+    font-size: 0.5rem;
+    padding: 1rem 2rem;
+    color: var(--Gray-900);
+}
+.error {
+    display: none;
+    color: var(--Red-400);
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    text-align: end;
+}
+
+
+@media screen and (min-width: 700px) {
+    body {
+        background-image: url("../assets/images/bg-intro-desktop.png");
+    }
+    .container {
+        width: 80%;
+        flex-direction: row;
+    }
+    .container > * {
+        width: 50%;
+    }
+}
